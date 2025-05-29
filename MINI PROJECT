@@ -1,0 +1,52 @@
+class Task:
+    def __init__(self):
+        self.title = ""
+        self.assigned_to = ""
+        self.deadline = ""
+        self.status = ""
+
+    def create_task(self):
+        self.title = input("Enter task title: ")
+        self.assigned_to = input("Enter assigned to: ")
+        self.deadline = input("Enter deadline (YYYY-MM-DD): ")
+        self.status = input("Enter status (Pending/Completed): ")
+
+    def display_task(self):
+        print("\nTask Title:", self.title)
+        print("Assigned To:", self.assigned_to)
+        print("Deadline:", self.deadline)
+        print("Status:", self.status)
+
+    def update_task(self):
+        self.title = input("Update task title: ")
+        self.assigned_to = input("Update assigned to: ")
+        self.deadline = input("Update deadline (YYYY-MM-DD): ")
+        self.status = input("Update status (Pending/Completed): ")
+
+
+def main():
+    t = Task()
+    while True:
+        print("\n=== Task Manager ===")
+        print("1. Create Task")
+        print("2. Display Task")
+        print("3. Update Task")
+        print("4. Exit")
+        choice = input("Enter your choice: ")
+
+        if choice == '1':
+            t.create_task()
+        elif choice == '2':
+            t.display_task()
+        elif choice == '3':
+            t.update_task()
+        elif choice == '4':
+            print("Exiting...")
+            break
+        else:
+            print("Invalid choice, please try again.")
+
+
+if __name__ == "__main__":
+    main()
+
